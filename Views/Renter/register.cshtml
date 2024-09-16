@@ -1,0 +1,111 @@
+﻿@model Rentley.Models.User_temp
+
+@{
+    ViewData["Title"] = "register";
+    Layout = "~/Views/Shared/No_Nav.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="logo1">Rent<span>ley</span></h1>
+        </div>
+        <div class="col-7 cen">
+            <section class="single-prod">
+                <h1 class="head1">Register</h1>
+            </section>
+        <form asp-action="register">
+                <div class="log-inps">
+            
+
+        <div class="row inp-2" style="width: 93%;">
+
+             <div class="form-group col-6">
+                <label asp-for="Name" class="control-label lable"></label>
+                <input asp-for="Name" class="form-control" style="background-color: #464646; color: #fff;" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+                        
+            <div class="form-group col-6">
+                <label asp-for="LastName" class="control-label lable"></label>
+                <input asp-for="LastName" class="form-control" style="background-color: #464646; color: #fff;" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+        </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label lable"></label>
+                <input asp-for="Email" class="form-control" style="background-color: #464646; color: #fff;" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+                        <p style="color: red;">@ViewBag.Acc</p>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password" class="control-label lable"></label>
+                <input type="password" asp-for="Password" class="form-control" style="background-color: #464646; color: #fff;" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Role" class="control-label lable"></label>
+                    <select id="Role" name="Role" asp-for="Role" class="form-control" style="background-color: #464646; color: #fff; font-size: 1.2vw;">
+                         <option class="form-control" value="1">Renter</option>
+                         <option class="form-control" value="2">Vendor</option>
+                         <span asp-validation-for="Role" class="text-danger"></span>
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label lable"></label>
+                <input asp-for="PhoneNumber" class="form-control" style="background-color: #464646; color: #fff;" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Country" class="control-label lable"></label>
+                <input asp-for="Country" class="form-control" style="background-color: #464646; color: #fff;" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+
+            <div class="row inp-2" style="width: 93%;">
+
+            <div class="form-group col-6">
+                <label asp-for="Postal_Code" class="control-label lable"> Postal Code</label>
+                <input asp-for="Postal_Code" class="form-control" style="background-color: #464646; color: #fff;" />
+                <span asp-validation-for="Postal_Code" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-6">
+                <label asp-for="Age" class="control-label lable"></label>
+                <input asp-for="Age" class="form-control" style="background-color: #464646; color: #fff;" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            </div>
+
+            </div>
+
+            <div class="form-group">
+                <label asp-for="City" class="control-label lable"></label>
+                <input asp-for="City" class="form-control" style="background-color: #464646; color: #fff;" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Address" class="control-label lable"></label>
+                <input asp-for="Address" class="form-control" style="background-color: #464646; color: #fff;" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+                    </div> <br>
+
+            <div class="form-group">
+                        <input type="submit" value="Register" class="btn" style="background-color: #CAE943; color: #222; font-weight: 700;" />
+                    </div>
+                    <br>
+                   
+                    <p>Already have an account! <a href="@Url.Action("login", "Renter")">Sign In</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

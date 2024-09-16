@@ -1,0 +1,271 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Rent\\Rentley\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|d:\\rent\\rentley\\views\\renter\\product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|solutionrelative:views\\renter\\product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|d:\\rent\\rentley\\views\\renter\\listing.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|solutionrelative:views\\renter\\listing.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|d:\\rent\\rentley\\controllers\\rentercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|solutionrelative:controllers\\rentercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|d:\\rent\\rentley\\views\\shared\\admin_nav.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|solutionrelative:views\\shared\\admin_nav.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|d:\\rent\\rentley\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|solutionrelative:views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|d:\\rent\\rentley\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|d:\\rent\\rentley\\views\\shared\\vendor_nav.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|solutionrelative:views\\shared\\vendor_nav.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|d:\\rent\\rentley\\views\\admin\\vendor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|solutionrelative:views\\admin\\vendor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|d:\\rent\\rentley\\views\\admin\\user.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|solutionrelative:views\\admin\\user.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|d:\\rent\\rentley\\views\\admin\\rented_prod.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|solutionrelative:views\\admin\\rented_prod.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|d:\\rent\\rentley\\views\\admin\\add_category.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|solutionrelative:views\\admin\\add_category.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|d:\\rent\\rentley\\views\\shared\\renter_nav.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|solutionrelative:views\\shared\\renter_nav.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|d:\\rent\\rentley\\views\\shared\\no_nav.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|solutionrelative:views\\shared\\no_nav.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|d:\\rent\\rentley\\views\\shared\\index_renternav.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|solutionrelative:views\\shared\\index_renternav.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|d:\\rent\\rentley\\views\\renter\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55CFEBBD-C7DB-48A7-961D-DE9233D94E37}|Rentley.csproj|solutionrelative:views\\renter\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "product.cshtml",
+              "DocumentMoniker": "D:\\Rent\\Rentley\\Views\\Renter\\product.cshtml",
+              "RelativeDocumentMoniker": "Views\\Renter\\product.cshtml",
+              "ToolTip": "D:\\Rent\\Rentley\\Views\\Renter\\product.cshtml",
+              "RelativeToolTip": "Views\\Renter\\product.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-16T19:19:15.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "vendor.cshtml",
+              "DocumentMoniker": "D:\\Rent\\Rentley\\Views\\Admin\\vendor.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\vendor.cshtml",
+              "ToolTip": "D:\\Rent\\Rentley\\Views\\Admin\\vendor.cshtml",
+              "RelativeToolTip": "Views\\Admin\\vendor.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAiwF8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-16T16:29:08.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "user.cshtml",
+              "DocumentMoniker": "D:\\Rent\\Rentley\\Views\\Admin\\user.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\user.cshtml",
+              "ToolTip": "D:\\Rent\\Rentley\\Views\\Admin\\user.cshtml",
+              "RelativeToolTip": "Views\\Admin\\user.cshtml",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAFIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-16T16:28:05.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Rented_prod.cshtml",
+              "DocumentMoniker": "D:\\Rent\\Rentley\\Views\\Admin\\Rented_prod.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Rented_prod.cshtml",
+              "ToolTip": "D:\\Rent\\Rentley\\Views\\Admin\\Rented_prod.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Rented_prod.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAiwHMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-16T16:21:19.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Rent\\Rentley\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Index.cshtml",
+              "ToolTip": "D:\\Rent\\Rentley\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-16T16:21:18.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "add_category.cshtml",
+              "DocumentMoniker": "D:\\Rent\\Rentley\\Views\\Admin\\add_category.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\add_category.cshtml",
+              "ToolTip": "D:\\Rent\\Rentley\\Views\\Admin\\add_category.cshtml",
+              "RelativeToolTip": "Views\\Admin\\add_category.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-16T16:21:14.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RenterController.cs",
+              "DocumentMoniker": "D:\\Rent\\Rentley\\Controllers\\RenterController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RenterController.cs",
+              "ToolTip": "D:\\Rent\\Rentley\\Controllers\\RenterController.cs",
+              "RelativeToolTip": "Controllers\\RenterController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAEwCgAAACYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T21:51:42.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Vendor_Nav.cshtml",
+              "DocumentMoniker": "D:\\Rent\\Rentley\\Views\\Shared\\Vendor_Nav.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\Vendor_Nav.cshtml",
+              "ToolTip": "D:\\Rent\\Rentley\\Views\\Shared\\Vendor_Nav.cshtml",
+              "RelativeToolTip": "Views\\Shared\\Vendor_Nav.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAiwCsAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-15T21:43:51.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "No_Nav.cshtml",
+              "DocumentMoniker": "D:\\Rent\\Rentley\\Views\\Shared\\No_Nav.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\No_Nav.cshtml",
+              "ToolTip": "D:\\Rent\\Rentley\\Views\\Shared\\No_Nav.cshtml",
+              "RelativeToolTip": "Views\\Shared\\No_Nav.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-15T21:43:38.806Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index_RenterNav.cshtml",
+              "DocumentMoniker": "D:\\Rent\\Rentley\\Views\\Shared\\Index_RenterNav.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\Index_RenterNav.cshtml",
+              "ToolTip": "D:\\Rent\\Rentley\\Views\\Shared\\Index_RenterNav.cshtml",
+              "RelativeToolTip": "Views\\Shared\\Index_RenterNav.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-15T21:43:32.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Admin_Nav.cshtml",
+              "DocumentMoniker": "D:\\Rent\\Rentley\\Views\\Shared\\Admin_Nav.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\Admin_Nav.cshtml",
+              "ToolTip": "D:\\Rent\\Rentley\\Views\\Shared\\Admin_Nav.cshtml",
+              "RelativeToolTip": "Views\\Shared\\Admin_Nav.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADQAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-15T21:43:20.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Rent\\Rentley\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Rent\\Rentley\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAqwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T21:33:23.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Renter_Nav.cshtml",
+              "DocumentMoniker": "D:\\Rent\\Rentley\\Views\\Shared\\Renter_Nav.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\Renter_Nav.cshtml",
+              "ToolTip": "D:\\Rent\\Rentley\\Views\\Shared\\Renter_Nav.cshtml",
+              "RelativeToolTip": "Views\\Shared\\Renter_Nav.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-15T21:31:40.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Rent\\Rentley\\Views\\Renter\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Renter\\Index.cshtml",
+              "ToolTip": "D:\\Rent\\Rentley\\Views\\Renter\\Index.cshtml",
+              "RelativeToolTip": "Views\\Renter\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-15T21:31:14.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Listing.cshtml",
+              "DocumentMoniker": "D:\\Rent\\Rentley\\Views\\Renter\\Listing.cshtml",
+              "RelativeDocumentMoniker": "Views\\Renter\\Listing.cshtml",
+              "ToolTip": "D:\\Rent\\Rentley\\Views\\Renter\\Listing.cshtml",
+              "RelativeToolTip": "Views\\Renter\\Listing.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-15T21:34:07.563Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

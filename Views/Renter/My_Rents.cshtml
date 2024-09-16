@@ -1,0 +1,168 @@
+﻿@model IEnumerable<Rentley.Models.Rents>
+
+@{
+    ViewData["Title"] = "My_Rents";
+    Layout = "~/Views/Shared/Renter_Nav.cshtml";
+
+    int CalculateDays(DateTime fromDate, DateTime untilDate)
+    {
+        return (untilDate - fromDate).Days;
+    }
+
+    decimal CalculateTotalPrice(int days, decimal pricePerDay)
+    {
+        return days * pricePerDay;
+    }
+
+    decimal CalculatePlatformFee(decimal totalPrice)
+    {
+        return totalPrice * 0.10m; // 10% platform fee
+    }
+
+    decimal CalculateTotalPriceWithFee(decimal totalPrice, decimal platformFee)
+    {
+        return totalPrice + platformFee;
+    }
+}
+
+<style>
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .right {
+        text-align: right;
+    }
+
+    .left {
+        text-align: left;
+    }
+
+    .full-width {
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h1 class="logo1">Rent<span>ley</span></h1>
+            <br><br><br>
+        </div>
+
+        <div class="col-6 cen">
+            <section class="single-prod">
+                <h1 class="head1">Your Rents</h1>
+            </section>
+            <br />
+            <br />
+            <br />
+            <center>
+                @foreach (var item in Model)
+                {
+                    var fromDate = item.FromDate;
+                    var untilDate = item.UntilDate;
+
+                    // Calculate the number of days
+                    int days = CalculateDays(fromDate, untilDate);
+
+                    // Calculate the total price
+                    decimal pricePerDay = item.Products.PricePerDay;
+                    decimal totalPrice = CalculateTotalPrice(days, pricePerDay);
+                    decimal platformFee = CalculatePlatformFee(totalPrice);
+                    decimal totalPriceWithFee = CalculateTotalPriceWithFee(totalPrice, platformFee);
+
+                    <div class="col-10">
+                        <div class="card mb-3 prod" style="width: 100%;">
+                            <a href="#">
+                                <img src="~/MYImages/@Html.DisplayFor(modelItem => item.Products.Product_Image)" class="card-img-top rounded-start" alt="..." style="display: block; margin: 0 auto; width: 80%; height: 15%; margin-top: 2vh;">
+
+                                <div class="card-body">
+                                    <h3 class="card-title" style="font-size: 1.5vw;">@Html.DisplayFor(modelItem => item.Products.Prod_name)</h3>
+
+                                    <h3 class="g-text" style="font-size: 1vw;">Requested on: <span>@Html.DisplayFor(modelItem => item.RequestDate)</span></h3>
+
+                                    <div class="row">
+                                        <div class="col-6 left">
+                                            <p class="g-text" style="font-size: 1vw;">@Html.DisplayFor(modelItem => item.status)</p>
+                                        </div>
+                                        <div class="col-6 right">
+                                            <p class="g-text" style="font-size: 1vw;">Price per Day: <span>@Html.DisplayFor(modelItem => item.Products.PricePerDay)</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 left">
+                                            <p class="g-text" style="font-size: 1vw;">From Date: <span>@Html.DisplayFor(modelItem => item.FromDate)</span></p>
+                                        </div>
+                                        <div class="col-6 right">
+                                            <p class="g-text" style="font-size: 1vw;">From Time: <span>@Html.DisplayFor(modelItem => item.FromTime)</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 left">
+                                            <p class="g-text" style="font-size: 1vw;">Total Days: <span>@days Days</span></p>
+                                        </div>
+                                        <div class="col-6 right">
+                                            <p class="g-text" style="font-size: 1vw;">Total Price: <span>@totalPrice</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 left">
+                                            <p class="g-text" style="font-size: 1vw;">Platform Fee (10%): <span>@platformFee</span></p>
+                                        </div>
+                                        <div class="col-6 right">
+                                            <p class="g-text" style="font-size: 1vw;">Total Price with Fee: <span>@totalPriceWithFee</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 left">
+                                            <p class="g-text" style="font-size: 1vw;">Until Date: <span>@Html.DisplayFor(modelItem => item.UntilDate)</span></p>
+                                        </div>
+                                        <div class="col-6 right">
+                                            <p class="g-text" style="font-size: 1vw;">Until Time: <span>@Html.DisplayFor(modelItem => item.UntilTime)</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1"></div>
+                                        <div class="col-2">
+                                            <img src="~/assets/Images/Product Owner/Owner.png" alt="" style="height: 5vh; width: 4vw;">
+                                        </div>
+                                        <div class="col-5">
+                                            <p class="g-text" style="font-size: 1vw;">@Html.DisplayFor(modelItem => item.Owner.Name) <span>@Html.DisplayFor(modelItem => item.Owner.LastName)</span></p>
+                                            <p style="font-size: 1vw;">Verified</p>
+                                        </div>
+                                        <div class="col-4"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                        </div>
+                                        <div class="col-7">
+                                            @if (item.status == "Approved")
+                                            {
+                                                <form asp-action="payment" asp-controller="Renter" asp-route-id="@item.RentRequestId" method="post" style="display:inline;">
+                                                    <button type="submit" class="btn" style="background-color: #CAE943; color: #222; font-size: 1.2vw;">Make Payment</button>
+                                                </form>
+                                            }
+                                            @if (item.status == "Rented")
+                                            {
+                                                <form asp-action="Return" asp-controller="Renter" asp-route-id="@item.RentRequestId" method="post" style="display:inline;">
+                                                    <button type="submit" class="btn" style="background-color: #CAE943; color: #222; font-size: 1.2vw;">Return Now</button>
+                                                </form>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </center>
+        </div>
+
+        <div class="col-3"></div>
+    </div>
+</div>

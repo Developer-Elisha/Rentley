@@ -1,0 +1,131 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Rentley
+build_property.RootNamespace = Rentley
+build_property.ProjectDir = D:\Rent\Rentley\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Rent\Rentley
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Rent/Rentley/Views/Admin/add_category.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cYWRkX2NhdGVnb3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Admin/Rented_prod.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVudGVkX3Byb2QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Admin/user.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cdXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Admin/vendor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cdmVuZG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Renter/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Renter/Listing.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGVyXExpc3RpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Renter/login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGVyXGxvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Renter/My_Rents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGVyXE15X1JlbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Renter/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGVyXFBheW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Renter/product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGVyXHByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Renter/register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGVyXHJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Renter/Rent_Request.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGVyXFJlbnRfUmVxdWVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Renter/Verification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGVyXFZlcmlmaWNhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Shared/Admin_Nav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluX05hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Shared/Index_RenterNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEluZGV4X1JlbnRlck5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Shared/No_Nav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vX05hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Shared/Renter_Nav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFJlbnRlcl9OYXYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Shared/Vendor_Nav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFZlbmRvcl9OYXYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Vendor/add_prod.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXGFkZF9wcm9kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Vendor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Vendor/my_products.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXG15X3Byb2R1Y3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Vendor/renter_req.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXHJlbnRlcl9yZXEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/Vendor/Update_Prods.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXFVwZGF0ZV9Qcm9kcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Rent/Rentley/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

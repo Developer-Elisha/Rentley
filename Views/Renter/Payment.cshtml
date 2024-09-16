@@ -1,0 +1,213 @@
+﻿@model Rentley.Models.Rents
+
+@{
+    ViewData["Title"] = "Payment";
+    Layout = "~/Views/Shared/Renter_Nav.cshtml";
+
+    int CalculateDays(DateTime fromDate, DateTime untilDate)
+    {
+        return (untilDate - fromDate).Days;
+    }
+
+    decimal CalculateTotalPrice(int days, decimal pricePerDay)
+    {
+        return days * pricePerDay;
+    }
+
+    decimal CalculatePlatformFee(decimal totalPrice)
+    {
+        return totalPrice * 0.10m; // 10% platform fee
+    }
+
+    decimal CalculateTotalPriceWithFee(decimal totalPrice, decimal platformFee)
+    {
+        return totalPrice + platformFee;
+    }
+
+    var fromDate = Model.FromDate;
+    var untilDate = Model.UntilDate;
+
+    int days = CalculateDays(fromDate, untilDate);
+    decimal pricePerDay = Model.Products.PricePerDay;
+    decimal totalPrice = CalculateTotalPrice(days, pricePerDay);
+    decimal platformFee = CalculatePlatformFee(totalPrice);
+    decimal totalPriceWithFee = CalculateTotalPriceWithFee(totalPrice, platformFee);
+}
+
+<style>
+    .bill {
+        height: 50vh;
+        background-color: #464646;
+        width: 100%;
+        margin-top: 50%;
+        margin-left: 15%;
+        border-radius: 7%;
+    }
+
+        .bill h5 {
+            color: #CAE943;
+            text-align: center;
+        }
+
+    .bill-info {
+        padding-left: 4%;
+        color: #CAE943;
+        padding-top: .5%;
+        font-size: 1vw;
+    }
+
+        .bill-info span {
+            text-align: right;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+            color: #fff;
+            padding-right: 2vw;
+        }
+
+    .img-card {
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: filter 0.3s, border 0.3s;
+    }
+
+        .img-card input[type="radio"] {
+            display: none;
+        }
+
+        .img-card label {
+            display: block;
+            transition: filter 0.3s, border 0.3s;
+        }
+
+        .img-card img {
+            display: block;
+        }
+
+        .img-card input[type="radio"]:checked + label {
+            background-color: #1B1B1B;
+            border: .7vw solid transparent;
+            border-radius: 1vw;
+            width: 13vw;
+            height: 16vh;
+        }
+
+
+
+            .img-card input[type="radio"]:checked + label img {
+                filter: none;
+            }
+
+</style>
+
+<form asp-action="SubmitPayment" asp-controller="Renter" asp-route-id="@Model.RentRequestId" method="post">
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <p class="pay mt-2">Your <span>Order</span></p>
+                <div class="card-img">
+                    <img src="~/MYImages/@Html.DisplayFor(model => model.Products.Product_Image)" alt="">
+                </div>
+                <br>
+                <h1 class="prod-name">@Html.DisplayFor(model => model.Products.Prod_name)</h1>
+                <p class="status">Available</p>
+                <input type="hidden" name="User_id" value="@ViewBag.User" />
+                <p class="pri">Price: <span>@Html.DisplayFor(model => model.Products.PricePerDay)</span></p>
+                <div class="row">
+                    <div class="col-2">
+                        <img src="~/assets/Images/Product Owner/Owner.png" alt="" class="owner">
+                    </div>
+                    <div class="col-10">
+                        <p class="owner-name">@Html.DisplayFor(model => model.Owner.Name) <span>@Html.DisplayFor(model => model.Owner.LastName)</span></p>
+                        <p class="varify">Verified</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 cen">
+                <section class="single-prod">
+                    <h1 class="head2">Payment Information</h1>
+                    <div class="row mt-4 pay">
+                        <div class="col-4">
+                            <div class="card img-card">
+                                <input type="radio" id="easypaisa" name="PaymentMethod" value="easypaisa" hidden>
+                                <label for="easypaisa">
+                                    <img src="~/assets/Images/Payment/easypaisa.png" class="card-img-top img-p" alt="Easypaisa">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card img-card">
+                                <input type="radio" id="jazzcash" name="PaymentMethod" value="jazzcash" hidden>
+                                <label for="jazzcash">
+                                    <img src="~/assets/Images/Payment/jazzcash.png" class="card-img-top img-p" alt="JazzCash">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card img-card">
+                                <input type="radio" id="sadapay" name="PaymentMethod" value="sadapay" hidden>
+                                <label for="sadapay">
+                                    <img src="~/assets/Images/Payment/sadapay.png" class="card-img-top img-p" alt="SadaPay">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="log-inps mt-4">
+                        <div class="row inp-2" style="width: 100%;">
+                            <div class="col-12">
+                                <label for="name" class="lable">Account Name:</label><br>
+                                <input name="AccountName" type="text"><br>
+                            </div>
+                            <div class="col-12">
+                                <label for="account" class="lable">Account No:</label><br>
+                                <input name="AccountNo" type="text"><br>
+                                <button type="submit" class="reg-btn">Rent Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                </section>
+            </div>
+            <div class="col-3">
+                <br />
+                <br />
+                <br />
+                <br />
+                <div class="bill">
+                    <h5 style="padding-top: 4%;">Bill</h5>
+                    <p class="bill-info">Rent Per Day: <span>PKR.@Html.DisplayFor(model => model.Products.PricePerDay)</span></p>
+                    <p class="bill-info">Rented for: <span>@days Days</span></p>
+                    <input type="hidden" name="Rent_Days" value="@days Days" />
+                    <input type="hidden" name="Payment_Status" value="Received" />
+                    <input type="hidden" name="status" value="Rented" />
+
+                    <p class="bill-info">Sub Total: <span>PKR.@totalPrice</span></p>
+                    <input type="hidden" name="Sub_Total" value="@totalPrice" />
+
+                    <p class="bill-info">Platform Fee (10%): <span>PKR.@platformFee</span></p>
+                    <input type="hidden" name="Fee" value="@platformFee" />
+
+                    <p class="bill-info">Total: <span>PKR.@totalPriceWithFee</span></p>
+                    <input type="hidden" name="Total" value="@totalPriceWithFee" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+        function selectPaymentMethod(methodId) {
+        // Remove 'active' class from all cards
+        document.querySelectorAll('.img-card').forEach(function (card) {
+            card.classList.remove('active');
+        });
+
+        // Add 'active' class to the selected card
+        const selectedCard = document.querySelector(`input[name="PaymentMethod"][value="${methodId}"]`).closest('.img-card');
+        selectedCard.classList.add('active');
+
+            // Optionally show an alert with the value of the selected radio button
+        // alert(`Selected payment method: ${methodId}`);
+    }
+</script>

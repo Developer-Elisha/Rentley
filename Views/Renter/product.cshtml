@@ -1,0 +1,109 @@
+﻿@model Rentley.Models.products
+
+@{
+    ViewData["Title"] = "product";
+    Layout = "~/Views/Shared/Renter_Nav.cshtml";
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h1 class="logo1">Rent<span>ley</span></h1>
+            <br><br><br>
+            <div class="row">
+                <div class="col-2">
+                    <img src="~/assets/Images/Product Owner/Owner.png" alt="" class="owner">
+                </div>
+                <div class="col-10">
+                    <p class="owner-name">@Model.User_Temp.Name <span>@Model.User_Temp.LastName</span></p>
+                    <p class="varify">Verified</p>
+                </div>
+            </div>
+            <h1 class="prod-name">@Html.DisplayFor(model => model.Prod_name)</h1>
+            <p class="status">@Html.DisplayFor(model => model.Availability)</p>
+            <p class="pri">Price: <span>@Html.DisplayFor(model => model.PricePerDay)</span></p>
+        </div>
+
+        <div class="col-6 cen">
+            <section class="single-prod">
+                <img src="~/MyImages//@Html.DisplayFor(model => model.Product_Image)" alt="" class="selected-img">
+                <br><br>
+                <div class="descrip">
+                    <p>@Html.DisplayFor(model => model.Description)</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-3">
+            <form asp-action="Rent_Request" asp-controller="Renter" method="post" class="mt-4">
+                <input type="hidden" name="User_id" value="@ViewBag.User" />
+                <input type="hidden" name="OwnerId" value="@Model.User_id" />
+                <input type="hidden" name="Prod_id" value="@Model.Prod_id" />
+
+                <p class="a-text">From:</p>
+                <input type="date" name="FromDate" class="time" required />
+                <input type="time" name="FromTime" class="time" required />
+
+                <p class="a-text" style="margin-top: 8vh;">Until:</p>
+                <input type="date" name="UntilDate" class="time" required />
+                <input type="time" name="UntilTime" class="time" required />
+
+                <br /><br />
+                <button type="submit" class="sign-in-btn" style="color: #222; font-weight: 700; width: 100%;">
+                    Rent Now
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Bootstrap JS and Popper.js (required for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<div class="modal fade" id="rentalAlert" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #303030; color: #fff;">
+            <div class="modal-body" >
+                <h5>The rental period cannot exceed 7 days.</h5>
+                <br />
+                <br />
+                <br />
+
+                <button type="button" class="btn" style="background-color: #CAE943;" data-bs-dismiss="modal">Got it</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        var form = $('form');
+
+        form.on('submit', function (event) {
+            var fromDateInput = $('input[name="FromDate"]').val();
+            var untilDateInput = $('input[name="UntilDate"]').val();
+
+            // Convert input values to Date objects
+            var fromDate = new Date(fromDateInput);
+            var untilDate = new Date(untilDateInput);
+
+            if (fromDate && untilDate) {
+                var duration = (untilDate - fromDate) / (1000 * 60 * 60 * 24); // Convert milliseconds to days
+
+                if (duration > 7) {
+                    $('#rentalAlert').modal('show');
+                    event.preventDefault(); // Prevent form submission
+                }
+            }
+        });
+    });
+</script>
+
+

@@ -1,0 +1,288 @@
+﻿@model Rentley.Prod_Image
+
+@{
+    ViewData["Title"] = "add_prod";
+    Layout = "~/Views/Shared/Vendor_Nav.cshtml";
+}
+
+<style>
+        .image-editor .tools .file-upload {
+            position: relative;
+            overflow: hidden;
+            background-color: #464646;
+
+        }
+
+        .image-editor .tools .file-upload input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .image-editor .thumbnail {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .image-editor .thumbnail button {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            background-color: #464646;
+            border: none;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .image-editor .thumbnail button:hover {
+            background-color: #3a3a39;
+        }
+
+        .image-editor .thumbnail button img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .image-editor .thumbnail .close-btn {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .image-editor .thumbnail .close-btn:hover {
+            background-color: #CAE943;
+        }
+
+        .image-editor .tools .icon {
+            font-size: 20px;
+        }
+
+        .image-editor .tools .icon:hover {
+            color: #4CAF50;
+        }
+
+        .image-editor .tools .emoji-icon {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .image-editor .tools .emoji-icon:hover {
+            color: #4CAF50;
+        }
+
+
+        
+    </style>
+
+<style>
+    select.form-control-user {
+        background-color: #464646;
+        color: #fff;
+        font-size: 1.2vw;
+    }
+
+        select.form-control-user option {
+            color: #fff; /* Ensure option text color is consistent */
+            background-color: #464646; /* Ensure option background color is consistent */
+        }
+
+            select.form-control-user option:checked {
+                color: #000; /* You can set a different color for the selected option if needed */
+                background-color: #fff; /* Or change the background color for better contrast */
+            }
+</style>
+
+
+<div class="container-fluid">
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <div class="col-lg-12">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 mb-4" style="color: #fff;">Upload Product</h1>
+                        </div>
+                        <form asp-action="add_prod" class="user" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                 <div class="form-group row">
+                                 <div class="form-group col-sm-6 mb-3 mb-sm-0">
+                                      <label asp-for="Prod_name" class="control-label">Product Name</label>
+                                    <input asp-for="Prod_name" class="form-control form-control-user" style="background-color: #464646; border: none; color: #fff;" />
+                                      <span asp-validation-for="Prod_name" class="text-danger"></span>
+                                 </div>
+                                 <div class="form-group col-sm-6 mb-3 mb-sm-0">
+                                      <label asp-for="Category_Id" class="control-label">Category</label>
+                                    <select asp-for="Category_Id" class="form-control" asp-items="ViewBag.category_Id" style="background-color: #464646; color: #fff; font-size: 1.2vw; border-radius: 10rem;">
+                                      @foreach (var c in ViewBag.Category)
+                                        {
+                                            <option value="@c.Category_Id" style="color: #fff; font-size: 1.2vw;">@c.Category_Name</option>
+                                        }
+                                      </select> 
+                                </div>
+                            </div>
+                                <div class="form-group">
+                                    <label asp-for="Description" class="control-label">Description</label>
+                                    <input asp-for="Description" class="form-control form-control-user" style="background-color: #464646; border: none; color: #fff;" />
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                <input asp-for="User_id" class="form-control form-control-user" type="hidden" value="@ViewBag.User" style="background-color: #464646; border: none; color: #fff;" />
+                                    <span asp-validation-for="User_id" class="text-danger"></span>
+                                </div>
+
+                            <div class="form-group">
+                                      <label asp-for="PricePerDay" class="control-label">Price Per Day</label>
+                                      <input asp-for="PricePerDay" class="form-control form-control-user" style="background-color: #464646; border: none; color: #fff;" />
+                                      <span asp-validation-for="PricePerDay" class="text-danger"></span> 
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Availability" class="control-label">Availability</label>
+                                <select asp-for="Availability" class="form-control" style="background-color: #464646; color: #fff; font-size: 1.2vw; border-radius: 10rem;">
+                                      <option class="form-control" value="Available">Available</option>
+                                      <option class="form-control" value="Not-Available">Not Available</option>
+                                      <span asp-validation-for="Availability" class="text-danger"></span>
+                                   </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="container image-editor">
+                                    <div class="tools">
+                                        <div class="thumbnail">
+                                            <div class="file-upload">
+                                                <button>
+                                                    <h1>+</h1>
+                                                </button>
+                                                <input type="file" accept="image/*" asp-for="ProductPhoto" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                   <span asp-validation-for="ProductPhoto" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                  <input type="submit" value="Post" class="btn btn-user btn-block" style="background-color: #CAE943; color: #222; font-size: 1.3vw; font-weight: 700;" />
+                            </div>
+        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+
+
+
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const fileInput = document.getElementById('file-input');
+    const filePreview = document.getElementById('file-preview');
+    const uploadButton = document.getElementById('upload-button');
+    let selectedFiles = [];
+
+    function displayImages(files) {
+        const existingFileNames = new Set(Array.from(filePreview.querySelectorAll('img')).map(img => img.src));
+        
+        Array.from(files).forEach(file => {
+            if (file.type.startsWith('image/') && !selectedFiles.some(f => f.name === file.name)) {
+                selectedFiles.push(file);
+                
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    if (!existingFileNames.has(event.target.result)) {
+                        const imgWrapper = document.createElement('div');
+                        imgWrapper.style.position = 'relative';
+                        imgWrapper.style.display = 'inline-block';
+                        imgWrapper.style.margin = '10px';
+
+                        const img = document.createElement('img');
+                        img.src = event.target.result;
+                        img.style.maxWidth = '100px';
+                        img.style.maxHeight = '100px';
+                        imgWrapper.appendChild(img);
+
+                        const removeBtn = document.createElement('span');
+                        removeBtn.classList.add('remove-btn');
+                        removeBtn.textContent = '×';
+                        removeBtn.onclick = function() {
+                            imgWrapper.remove();
+                            selectedFiles = selectedFiles.filter(f => f.name !== file.name);
+                        };
+
+                        imgWrapper.appendChild(removeBtn);
+                        filePreview.appendChild(imgWrapper);
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+
+    fileInput.addEventListener('change', function() {
+        displayImages(fileInput.files);
+    });
+
+    uploadButton.addEventListener('click', function() {
+        if (selectedFiles.length === 0) {
+            alert('Please select images to upload.');
+            return;
+        }
+
+        alert('Images uploaded successfully!');
+    });
+});
+
+    </script>
+
+<script>
+    const fileUpload = document.querySelector('.file-upload input[type="file"]');
+    const imagePreview = document.getElementById('main-image');
+    const thumbnailContainer = document.querySelector('.thumbnail');
+
+    fileUpload.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+            const newThumbnail = document.createElement('button');
+            newThumbnail.innerHTML = `
+                <img src="${e.target.result}" alt="Thumbnail" class="th">
+                <button class="close-btn">&times;</button>
+            `;
+            newThumbnail.addEventListener('click', (e) => {
+                if (e.target.classList.contains('close-btn')) {
+                    newThumbnail.remove();
+                } else {
+                    imagePreview.src = e.target.src;
+                }
+            });
+            thumbnailContainer.appendChild(newThumbnail);
+
+            imagePreview.src = e.target.result;
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    });
+</script>

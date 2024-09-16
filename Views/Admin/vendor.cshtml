@@ -1,0 +1,239 @@
+﻿@model IEnumerable<Rentley.Models.User_temp>
+
+@{
+    ViewData["Title"] = "vendor";
+    Layout = "~/Views/Shared/Admin_Nav.cshtml";
+}
+
+<style>
+
+    .page-item {
+        background-color: #303030;
+        border: 1px solid #303030;
+        margin: 0 2px;
+        border-radius: 4px;
+    }
+
+    .page-link {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 15px;
+        display: block;
+        text-align: center;
+    }
+
+    .page-item.active .page-link {
+        background-color: #CAE943;
+        color: #000;
+    }
+
+    .page-item.disabled .page-link {
+        background-color: #303030;
+        color: #6c757d;
+        cursor: not-allowed;
+    }
+
+    .page-item:not(.disabled):hover .page-link {
+        background-color: #404040;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0 bg-secondary">
+                <div class="col-lg-12">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 mb-4" style="color: #fff;">Vendors</h1>
+                        </div>
+                        <div class="col">
+                            <label for="recordsPerPage" class="form-label">Records per page:</label>
+                            <select id="recordsPerPage" class="form-select" style="width: auto;">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="60">60</option>
+                                <option value="80">80</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>No:</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                Zip Code
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th> *@
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+@foreach (var item in Model.Select((value, index) => new { value, index }))
+                                    {
+                                        <tr>
+                                            <td>@(item.index + 1)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.value.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.value.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.value.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.value.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.value.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.value.Postal_Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.value.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.value.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.value.Address)
+            </td>
+            @*
+            <td>
+                @Html.DisplayFor(modelItem => item.value.status)
+            </td>
+             <td>
+                <a asp-action="Edit" asp-route-id="@item.value.User_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.value.User_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.value.User_id">Delete</a>
+            </td> *@
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+<nav>
+    <ul class="pagination" id="pagination">
+        <!-- Pagination items will be injected here -->
+        <li class="page-item disabled" id="prevButton">
+            <a class="page-link" href="#" onclick="goToPage(-1)">Previous</a>
+        </li>
+        <!-- Page numbers will be dynamically added here -->
+        <li class="page-item disabled" id="nextButton">
+            <a class="page-link" href="#" onclick="goToPage(1)">Next</a>
+        </li>
+    </ul>
+</nav>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentPage = 1;
+    let recordsPerPage = parseInt(document.getElementById('recordsPerPage').value, 10);
+
+    function renderTable(page = 1) {
+        const start = (page - 1) * recordsPerPage;
+        const end = start + recordsPerPage;
+        const rows = document.querySelectorAll('#tableBody tr');
+
+        rows.forEach((row, index) => {
+            if (index >= start && index < end) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+
+        renderPagination();
+    }
+
+    function renderPagination() {
+        const totalRows = document.querySelectorAll('#tableBody tr').length;
+        const totalPages = Math.ceil(totalRows / recordsPerPage);
+
+        // Update pagination
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const pagination = document.getElementById('pagination');
+
+        // Clear previous page numbers
+        pagination.querySelectorAll('.page-number').forEach(el => el.remove());
+
+        // Previous button
+        if (currentPage === 1) {
+            prevButton.classList.add('disabled');
+        } else {
+            prevButton.classList.remove('disabled');
+        }
+
+        // Next button
+        if (currentPage === totalPages) {
+            nextButton.classList.add('disabled');
+        } else {
+            nextButton.classList.remove('disabled');
+        }
+
+        // Page numbers
+        for (let i = 1; i <= totalPages; i++) {
+            const pageItem = document.createElement('li');
+            pageItem.className = `page-item ${i === currentPage ? 'active' : ''} page-number`;
+            pageItem.innerHTML = `<a class="page-link" href="#" onclick="goToPage(${i})">${i}</a>`;
+            pagination.insertBefore(pageItem, nextButton);
+        }
+    }
+
+    function goToPage(page) {
+        const totalRows = document.querySelectorAll('#tableBody tr').length;
+        const totalPages = Math.ceil(totalRows / recordsPerPage);
+        if (page < 1 || page > totalPages) {
+            return;
+        }
+        currentPage = page;
+        renderTable(page);
+    }
+
+    document.getElementById('recordsPerPage').addEventListener('change', function () {
+        recordsPerPage = parseInt(this.value, 10);
+        currentPage = 1;
+        renderTable(currentPage);
+    });
+
+    // Initial render
+    renderTable();
+
+</script>

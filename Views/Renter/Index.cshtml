@@ -1,0 +1,28 @@
+﻿@model Rentley.Models.products
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Index_RenterNav.cshtml";
+}
+
+<main>
+    <a href="@Url.Action("Index", "Renter")" style="color: #222; font-weight: 700; text-decoration: none;">
+        <h1 class="logo">Rent<span>ley</span></h1>
+    </a>
+
+    <!-- Search Input Section -->
+    <div class="search-input-container">
+        <form asp-action="Listing" asp-controller="Renter" method="get">
+            <input type="text" placeholder="What You Want to Rent" class="search-input" name="search">
+            <button class="search-icon-btn" type="submit">
+                <i class="fa fa-search search-icon"></i>
+            </button>
+        </form>
+    </div>
+
+    <p class="tag-line">Rent Your Assets, Boost Your Income.</p>
+    <center><p style="color: Red;">@ViewBag.Search</p></center>
+
+</main>
+
+

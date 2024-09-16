@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Rentley.Models.products>
+
+@{
+    ViewData["Title"] = "Listing";
+    Layout = "~/Views/Shared/Renter_Nav.cshtml";
+}
+<style>
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+            <a href="@Url.Action("Index", "Renter")" style="color: #222; font-weight: 700; text-decoration: none;">
+                <h1 class="logo1">Rent<span>ley</span></h1>
+            </a>
+        </div>
+        <div class="col-7 cen">
+            <!-- Search section -->
+            @* <div class="search-input-container1">
+                <input type="text" placeholder="What You Want to Rent" class="search-input1">
+                <button class="search-icon-btn1">
+                    <a class="fa fa-search search-icon1" href="#"></a>
+                </button>
+            </div> *@
+            <!-- Search section -->
+
+            <section class="prods" style=" width: 97%;">
+                <!-- prod 1 -->
+                @foreach (var item in Model)
+                {
+                <div class="card mb-3 prod">
+                        <a href="@Url.Action("product", "Renter", new { E2N20R31D22A28A31 = item.Prod_id })">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+
+                                        <img src="~/MyImages//@Html.DisplayFor(model => item.Product_Image)" class="img-fluid rounded-start prod-img" alt="...">
+
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+
+                                            <h5 class="card-title">
+                                                @Html.DisplayFor(model => item.Prod_name)
+                                            </h5>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p class="g-text">@Html.DisplayFor(model => item.Availability)</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="g-text">Rent Per Hour <span>@Html.DisplayFor(model => item.PricePerDay)</span></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <img src="~/assets/Images/Product Owner/Owner.png" alt="" class="own">
+                                                </div>
+                                            <div class="col-10">
+                                                <p class="g-text">@item.User_Temp.Name <span>@item.User_Temp.LastName</span></p>
+                                                    <p class="sub-h">Verified</p>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    </div>
+                                </div>
+                    </a>
+                </div>
+                }
+                <!-- prod 1 -->
+            </section>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>

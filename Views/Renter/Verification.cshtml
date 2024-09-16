@@ -1,0 +1,89 @@
+﻿@model Rentley.varify_image
+
+@{
+    ViewData["Title"] = "Verification";
+    Layout = "~/Views/Shared/Renter_Nav.cshtml";
+}
+
+
+<style>
+    input[type="file"] {
+        display: none; /* Hide the actual file input */
+    }
+
+    .custom-file-upload {
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+        background-color: #464646;
+        border-radius: 5px;
+        width: 70%;
+        text-align: center;
+        font-size: 16px;
+        color: #495057;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        .custom-file-upload:hover {
+            background-color: #3f3e3e;
+            color: #212529;
+        }
+
+    .log-inps p {
+        margin-top: 30%;
+        font-size: 1.3vw;
+        margin-left: -10%;
+    }
+
+    .verify-btn {
+       
+    }
+
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="col-7 cen">
+            <section class="single-prod">
+                <h1 class="head1">Verification</h1>
+            </section>
+            <form asp-action="Verification" enctype="multipart/form-data" class="log-inps">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Front" class="control-label lable">CNIC Front Picture:</label><br>
+                    <label class="custom-file-upload" asp-for="Front" style="color: #f8f9fa;">Choose File</label>
+                    <input type="file" accept="image/*" asp-for="Front" class="form-control" />
+                    <span asp-validation-for="Front" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Back" class="control-label lable">CNIC Back Picture:</label><br>
+                    <label class="custom-file-upload" asp-for="Back" style="color: #f8f9fa;">Choose File</label>
+                    <input type="file" accept="image/*" asp-for="Back" class="form-control" />
+                    <span asp-validation-for="Back" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Self" class="control-label lable">Selfie Time:</label><br>
+                    <label asp-for="Self" class="custom-file-upload" style="color: #f8f9fa;">Click a Selfie</label>
+                    <input type="file" accept="image/*" capture="capture" asp-for="Self" class="form-control" />
+                    <span asp-validation-for="Self" class="text-danger"></span>
+                </div>
+                <div class="row" style="width: 90%;">
+                    <div class="form-group col-6">
+                        <input type="submit" class="btn" style="background-color: #CAE943; color: #222; margin-top: 3vh; width: 50%; border: none; border-radius: 6px; height: 5vh; font-size: 1.3vw; font-weight: 700; margin-left: 7%;" value="Verify" />
+                    </div>
+                    <div class="form-group col-6">
+                        <a href="@Url.Action("logout", "Renter")" class="btn" style=" color: #fff; margin-top: 3vh; width: 50%; border: none; background-color: #464646; border-radius: 6px; height: 5vh; font-size: 1.3vw; font-weight: 700; margin-left: 7%;">Logout</a>
+                    </div>
+                </div>
+            </form>
+            <div class="log-inps">
+                <P>Make sure this process of verification will take 2 or 3 business days.</P>
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>

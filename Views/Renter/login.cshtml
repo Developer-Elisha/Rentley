@@ -1,0 +1,45 @@
+﻿@model Rentley.Models.User_temp
+@{
+    ViewData["Title"] = "login";
+    Layout = "~/Views/Shared/No_Nav.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="logo1">Rent<span>ley</span></h1>
+        </div>
+        <div class="col-7 cen">
+            <section class="single-prod">
+                <h1 class="head1">Login</h1>
+            </section>
+            <form asp-action="Login" method="post" >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="log-inps">
+                    <div class="form-group">
+                <label for="email">Email:</label><br>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                <label for="Password" class="label-pass">Password:</label><br>
+                        <input type="password" asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="submit" value="Login" class="btn" style="background-color: #CAE943; color: #222; font-weight:700;" />
+                    </div>
+                    <br>
+                    <p>Don't have an account yet? <a href="@Url.Action("register", "Renter")">Sign Up</a></p>
+
+                    <center><p style="color: Red;">@ViewBag.Error</p></center>
+            </div>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+
+
